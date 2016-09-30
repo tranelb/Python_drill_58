@@ -23,7 +23,7 @@ t01_date = date(t01_Year, t01_Month, t01_Day)
 
 
 print "*-"*30
-print "--ATTENTIION!!!!  THIS PROGRAM MOVES FILES AND IS BETA--"
+print "--ATTENTIION!!!!  THIS PROGRAM COPIES FILES AND IS BETA--"
 print "--Feel free to click and drag the folders into this window--"
 print "*-"*30
 
@@ -77,8 +77,8 @@ for var in dirs:
     
     #print "f_date looks like this -> {} and is {}".format(f_date, type(f_date))
     if f_date >= t01_date and m_date >= t01_date:
-        print "====>>>Moved {} to {}<<<=====".format(var,dstPath)
-        shutil.move(varN, dstPath)
+        print "====>>>Copied {} to {}<<<=====".format(var,dstPath)
+        shutil.copy(varN, dstPath)
     elif f_date <= t01_date:
         print "====>>>The f_date of {} is older than today's date<<<=====".format(dataList[0])
     elif m_date <= t01_date:
