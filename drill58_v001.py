@@ -14,16 +14,17 @@ from datetime import date
 
 tday = datetime.today()
 t01_Year = int(str(tday)[:4])
-print "t01_Year is {}".format(t01_Year)
+#print "t01_Year is {}".format(t01_Year)
 t01_Month = int(str(tday)[5:7])
-print "t01_Month is {}".format(t01_Month)
+#print "t01_Month is {}".format(t01_Month)
 t01_Day = int(str(tday)[8:10])
-print "t01_Day is {}".format(t01_Day)
+#print "t01_Day is {}".format(t01_Day)
 t01_date = date(t01_Year, t01_Month, t01_Day)
 
 
 print "*-"*30
 print "--ATTENTIION!!!!  THIS PROGRAM MOVES FILES AND IS BETA--"
+print "--Feel free to click and drag the folders into this window--"
 print "*-"*30
 
 strtPath = raw_input('Enter start path\\folder: ')
@@ -43,7 +44,7 @@ for var in dirs:
     #for i in list:
     varN = strtPath + '\\' + var
     #varFLT = float(varN)
-    print varN
+    #print varN
         
 #for var in os.walk(dirs):
     #total_path = dirs + var
@@ -54,35 +55,34 @@ for var in dirs:
     #print type(dirs)
     fileCTime = os.path.getctime(varN)
     whats_fileCTime = type(fileCTime)
-    print "The fileCTime var is a {} and looks like {}".format(whats_fileCTime,fileCTime)
-    print "The fileCTime var is {}".format(fileCTime)
+    #print "The fileCTime var is a {} and looks like {}".format(whats_fileCTime,fileCTime)
+    #print "The fileCTime var is {}".format(fileCTime)
     standardCtime = datetime.fromtimestamp(fileCTime).strftime('%Y-%m-%d %H:%M:%S')
     print "The created time of {} is {}".format(var, standardCtime)
     fileMTime = os.path.getmtime(varN)
     standardMtime = datetime.fromtimestamp(fileCTime).strftime('%Y-%m-%d %H:%M:%S')
     print "The modified time of {} is {}".format(var, standardMtime)
-    print "#"*20
     dataList = [var,standardCtime,standardMtime,varN]
     cYear = int(dataList[1][:4])
-    print 'cYear = {}'.format(cYear)
+    #print 'cYear = {}'.format(cYear)
     cMonth = int(dataList[1][5:7])
-    print 'cMonth = {}'.format(cMonth)
+    #print 'cMonth = {}'.format(cMonth)
     cDay = int(dataList[1][8:10])
-    print 'cDay = {}'.format(cDay)
+    #print 'cDay = {}'.format(cDay)
     f_date = date(cYear, cMonth,cDay)
     mYear = int(dataList[2][:4])
     mMonth = int(dataList[2][5:7])
     mDay = int(dataList[2][8:10])
     m_date = date(mYear, mMonth,mDay)
     
-    print "f_date looks like this... {} and is {}".format(f_date, type(f_date))
+    #print "f_date looks like this -> {} and is {}".format(f_date, type(f_date))
     if f_date >= t01_date and m_date >= t01_date:
         print "====>>>Moved {} to {}<<<=====".format(var,dstPath)
         shutil.move(varN, dstPath)
     elif f_date <= t01_date:
-        print "====>>>The f_date {} is older than today's date<<<=====".format(dataList[0])
+        print "====>>>The f_date of {} is older than today's date<<<=====".format(dataList[0])
     elif m_date <= t01_date:
-        print "====>>>The m_date{} is older than today's date<<<=====".format(dataList[0])
+        print "====>>>The m_date of {} is older than today's date<<<=====".format(dataList[0])
     else:
         print "<<<=====  huh? Moving on... =====>>>"
         pass
@@ -106,29 +106,29 @@ for var in dirs:
 
 
 
-print "tday = {} and is {}".format(tday, type(tday))
+#print "tday = {} and is {}".format(tday, type(tday))
 
 
-print dataList
-n = 0
-for d in dataList:
-    n +=1
-    print "Item {} of dataList is {}".format(n, d)
+#print dataList
+#n = 0
+#for d in dataList:
+#    n +=1
+#    print "Item {} of dataList is {}".format(n, d)
     
     
 
-print f_date < t01_date
+#print f_date < t01_date
 
-print f_date > t01_date
+#print f_date > t01_date
 
 
-guess = f_date - t01_date
+#guess = f_date - t01_date
 
-print t01_date
+#print t01_date
 
-print "guess = {} and is  {}".format(guess, type(guess))
+#print "guess = {} and is  {}".format(guess, type(guess))
 
-print "t01_date = {} and is {}".format(guess, type(guess))
+#print "t01_date = {} and is {}".format(guess, type(guess))
 
 
 
